@@ -1,0 +1,179 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reverseLooneyTunes {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-app-region: no-drag;
+  font-family: sans-serif;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-wrapper {
+  width: 420px;
+  height: 365px;
+  text-align: center;
+  position: relative;
+  pointer-events: none;
+}
+
+#robot, #blob, input, button {
+  pointer-events: all;
+}
+
+#robot {
+  width: 110px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  animation: fadeIn 1s ease-in-out;
+  cursor: pointer;
+}
+
+#blob {
+  position: relative;
+  width: 73%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  animation: reverseLooneyTunes 0.3s ease-in-out forwards,
+  fadeIn 0.5s ease-in-out forwards;
+}
+
+#response {
+  position: absolute;
+  margin: auto;
+  max-width: 250px;
+  max-height: 135px;
+  overflow: hidden scroll;
+  padding-inline: 80px;
+  z-index: 1;
+  line-height: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#response::-webkit-scrollbar {
+  display: none;
+}
+
+
+#input-container {
+  width: 67%;
+  position: absolute;
+  bottom: 0;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+input {
+  padding: 10px;
+  padding-inline-start: 13px;
+  width: 100%;
+  height: 16px;
+  border-radius: 20px;
+  background-color: #242424;
+  border: none;
+  color: #fff;
+  font-size: 12.5px;
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+button {
+  height: 34px;
+  width: 34px;
+  border-radius: 50px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 11.5px;
+  padding: 8px 8px;
+  border: none;
+  margin-right: 5px;
+  cursor: pointer;
+  z-index: 2;
+  font-weight: bold;
+  background: transparent;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#drag-area {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-app-region: no-drag;
+  box-sizing: border-box;
+  border-bottom: 1px solid transparent;
+  z-index: 1;
+  padding-right: 10px;
+  pointer-events: all;
+}
+
+#drag-handle {
+  height: 25px;
+  width: fit-content;
+  background-color: transparent;
+  -webkit-app-region: drag;
+  border-radius: 2px;
+  transition: opacity 0.25s ease;
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  font-weight: normal;
+  font-size: 14px;
+  user-select: none;
+  opacity: 0;
+  border: 1px solid transparent;
+}
+
+#drag-area:hover #drag-handle {
+  opacity: 1;
+  color: #aaa;
+  border: 1px dashed solid #aaa;
+}

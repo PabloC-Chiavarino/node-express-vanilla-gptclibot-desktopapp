@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>AssistGPT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app-wrapper">
+    <div id="drag-area">
+      <div id="drag-handle">Drag here</div>
+    </div>
+      <div id="robot-container">
+        <div id="robot"></div>
+        <div id="blob" class="hidden">
+          <div id="response"></div>
+        </div>
+      </div>
+      <div id="input-container" class="hidden">
+        <input type="text" id="user-input" placeholder="Type a command or ask anything..." />
+        <button onclick="sendMessage()">
+          <img src="./assets/icons/send.svg" alt="">
+        </button>
+      </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
