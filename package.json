@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
-    "electron": "^37.2.3",
+    "electron": "^38.0.0-alpha.7",
     "nodemon": "^3.1.10"
   }
 }
