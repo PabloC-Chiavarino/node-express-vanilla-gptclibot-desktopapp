@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "global-mouse-events": "^1.2.0",
     "openai": "^5.10.1"
   },
   "devDependencies": {
