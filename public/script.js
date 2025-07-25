@@ -45,6 +45,11 @@ document.addEventListener('click', (e) => {
   }
 });
 
+window.electronAPI.onOutsideClick(() => {
+  inputContainer.classList.add('hidden');
+  blob.classList.add('hidden');
+});
+
 function triggerBlobReflow() {
   blob.classList.add('hidden');
   void blob.offsetWidth;
